@@ -20,9 +20,9 @@ class Doctor(models.Model):
   first_name = models.CharField(max_length=30)
   last_name = models.CharField(max_length=30)
   address = models.TextField(default = "Testing")
-  county = models.ForeignKey('Country', on_delete=models.CASCADE, default="Testing")
+  county = models.ForeignKey('Country', on_delete=models.CASCADE, default=1)
   virtual_consultation = models.BooleanField(default=False)
-  languages = models.PositiveIntegerField(choices = LANGUAGE_CHOICES,blank=True, default="0"
+  languages = models.PositiveIntegerField(choices = LANGUAGE_CHOICES,blank=True, default=0
     )
   rating = models.PositiveIntegerField(validators=[MinValueValidator(0), MaxValueValidator(10)], default="0"
     )
