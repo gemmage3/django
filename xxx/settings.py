@@ -42,7 +42,7 @@ INSTALLED_APPS = [
 
     #own
     'pages',
-    'consultation',
+    'app',
 ]
 
 MIDDLEWARE = [

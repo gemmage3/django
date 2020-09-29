@@ -14,23 +14,53 @@ class Doctor(models.Model):
     (1, 'Spanish'),
     (2, 'French'),
     (3, 'German'),
-    (4, 'Chinese')
+    (4, 'Chinese'),
+    (5, 'Turkish'),
+    (6, 'Russian'),
+    (7, 'Arabic'),
+    (8, 'Punjabi'),
+    (9, 'Japanese')
     )
 
-  first_name = models.CharField(max_length=30)
-  last_name = models.CharField(max_length=30)
-  address = models.TextField(default = "Testing")
-  county = models.ForeignKey('Country', on_delete=models.CASCADE, default=0)
+  name = models.CharField(max_length=30)
+  summary = models.TextField(default = "Testing")
+  Location = models.CharField(max_length=50)
+  summary = models.TextField(default = "Testing")
+  country = models.ForeignKey('Country', on_delete=models.CASCADE, default=0)
   virtual_consultation = models.BooleanField(default=False)
   languages = models.PositiveIntegerField(choices = LANGUAGE_CHOICES,blank=True, default=0
     )
+  years_experience = models.PositiveIntegerField(default=0)
   rating = models.PositiveIntegerField(validators=[MinValueValidator(0), MaxValueValidator(10)], default=0
     )
   price_quote_available = models.BooleanField(default=False)
 
 
 class Country(models.Model):
-  country_name = models.CharField(max_length=30)
+  UK = 0
+  SPAIN = 1
+  TURKEY = 2
+  GREECE = 3
+  THAILAND = 4
+  COLUMBIA = 5
+  DOMINICAN_REPUBLIC = 6
+  MEXICO = 7
+  COSTA_RICA = 8
+  BELGIUM = 9
+  COUNTRY_CHOICES = (
+    (0, 'UK'),
+    (1, 'SPAIN'),
+    (2, 'TURKEY'),
+    (3, 'GREECE'),
+    (4, 'THAILAND'),
+    (5, 'COLUMBIA'),
+    (6, 'DOMINICAN_REPUBLIC'),
+    (7, 'MEXICO'),
+    (8, 'COSTA_RICA'),
+    (9, 'BELGIUM'),
+    )
+  country_name = models.PositiveIntegerField(choices = COUNTRY_CHOICES,blank=True, default=0
+    )
 
 class User(models.Model):
     user_id = models.AutoField(primary_key=True)
@@ -44,8 +74,6 @@ class Book(models.Model):
 
     CONSULTATION_STATUS = ((BOOKED, 'Booked'),
                             (CANCELLED, 'Cancelled'),)
-    email = models.EmailField()
-    name = models.CharField(max_length=30)
     user_id =models.ForeignKey('User', on_delete=models.CASCADE, default=0)
     doctor_id=models.ForeignKey('Doctor', on_delete=models.CASCADE, default=0)
     nos = models.DecimalField(decimal_places=0, max_digits=2)

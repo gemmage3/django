@@ -16,7 +16,9 @@ def about_view(request, *args, **kwargs):
 
 def doctor_view(request, *args, **kwargs):
     my_context = {
-      "my_text": "This is the doctor page"
+      "my_text": "This is the doctor page",
+      "my_number": "123",
+
     }
     return render(request, "doctor.html", my_context)
 
