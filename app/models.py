@@ -28,7 +28,7 @@ class Doctor(models.Model):
   main_img = models.ImageField(blank=True)
   summary = models.TextField(default = "Testing")
   Location = models.CharField(max_length=50)
-  country = models.ForeignKey('Country', on_delete=models.CASCADE, default=0)
+  country = models.ForeignKey('Country', on_delete=models.CASCADE, blank=True, null=True)
   virtual_consultation = models.BooleanField(default=False)
   languages = models.PositiveIntegerField(choices = LANGUAGE_CHOICES,blank=True, default=0
     )
