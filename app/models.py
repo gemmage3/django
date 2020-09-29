@@ -1,5 +1,7 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.utils.timezone import now
+from datetime import datetime
 
 # Create your models here.
 
@@ -23,9 +25,9 @@ class Doctor(models.Model):
     )
 
   name = models.CharField(max_length=30)
+  main_img = models.ImageField(blank=True)
   summary = models.TextField(default = "Testing")
   Location = models.CharField(max_length=50)
-  summary = models.TextField(default = "Testing")
   country = models.ForeignKey('Country', on_delete=models.CASCADE, default=0)
   virtual_consultation = models.BooleanField(default=False)
   languages = models.PositiveIntegerField(choices = LANGUAGE_CHOICES,blank=True, default=0
@@ -68,7 +70,7 @@ class User(models.Model):
     name = models.CharField(max_length=30)
     password = models.CharField(max_length=30)
 
-class Book(models.Model):
+class Booking(models.Model):
     BOOKED = 'B'
     CANCELLED = 'C'
 
@@ -76,8 +78,8 @@ class Book(models.Model):
                             (CANCELLED, 'Cancelled'),)
     user_id =models.ForeignKey('User', on_delete=models.CASCADE, default=0)
     doctor_id=models.ForeignKey('Doctor', on_delete=models.CASCADE, default=0)
-    nos = models.DecimalField(decimal_places=0, max_digits=2)
     price = models.DecimalField(decimal_places=2, max_digits=6)
+    created_at = models.TimeField(auto_now_add=True)
     date = models.DateField()
     time = models.TimeField()
     status = models.CharField(choices=CONSULTATION_STATUS, default=BOOKED, max_length=255)
