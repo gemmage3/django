@@ -84,4 +84,16 @@ class Booking(models.Model):
     time = models.TimeField()
     status = models.CharField(choices=CONSULTATION_STATUS, default=BOOKED, max_length=255)
 
+class Procedure(models.Model):
+    PROCEDURE_CHOICES = (
+      ('BBL', 'BBL'),
+      ('BA', 'BREAST AUGMENTATION'),
+      ('RHP', 'RHINOPLASTY'),
+      )
+
+      procedure_id = models.AutoField(primary_key=True)
+      procedure_name = models.CharField(max_length=30, choices=PROCEDURE_CHOICES, blank=False)
+      Procedure_description = models.TextField(default = "Description", blank=False)
+
+
 

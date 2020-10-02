@@ -9,3 +9,11 @@ class BookingForm(forms.ModelForm):
     fields = ['price',
               'date',
               'time']
+
+class RawBookingForm(forms.Form):
+  price = forms.DecimalField()
+  date = forms.DateField()
+  time = forms.TimeField()
+
+
+
