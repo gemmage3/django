@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+ <form action='.' method='POST'> {% csrf_token %}
+    {{nform.as_ul }}
+    <input type='submit'value='save'/>
+</form>
+
+
+{% endblock content %}

@@ -16,15 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from pages.views import home_view, about_view, procedure_view
-from app.views import doctor_detail_view, booking_create_view
+from pages.views import home_view
+from app.views import doctor_detail_view, doctor_list_view, booking_create_view, booking_delete_view, procedure_detail_view, procedure_list_view
 
 urlpatterns = [
     path('home/', home_view, name='home'),
-    path('about/', about_view, name='about'),
-    path('procedure/', procedure_view, name='procedure'),
     path('doctor/', doctor_detail_view, name='doctor'),
-    path('create/', booking_create_view, name='booking'),
+    path('doctorlist/', doctor_list_view, name='doctor list'),
+    path('booking/', booking_create_view, name='booking'),
+    path('bookingdelete/', booking_delete_view, name='booking delete'),
+    path('procedure/', procedure_detail_view, name='procedure'),
+    path('procedurelist/', procedure_list_view, name='procedure'),
 
 
     path('admin/', admin.site.urls),

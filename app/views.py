@@ -5,6 +5,43 @@ from .forms import BookingForm, RawBookingForm
 from .models import Doctor
 # Create your views here.
 
+# DOCTOR
+
+def doctor_detail_view(request):
+  obj = Doctor.objects.get(id=1)
+
+  context = {
+  'object': obj
+  }
+  return render(request, "doctor/doctor_detail.html", context)
+
+def doctor_list_view(request, *args, **kwargs):
+    my_context = {
+      "my_text": "This is the doctor list page",
+      "my_number": "123",
+    }
+    return render(request, "doctor/doctor_list.html", my_context)
+
+# BOOKING
+
+def booking_create_view(request):
+    form = BookingForm(request.POST or None)
+    if form.is_valid():
+       form.save()
+       form = BookingForm()
+
+    context = {
+    'form': form
+    }
+    return render(request, "booking/booking_create.html", context)
+
+def booking_delete_view(request, *args, **kwargs):
+    my_context = {
+      "my_text": "Delete Booking",
+      "my_number": "123",
+    }
+    return render(request, "booking/booking_delete.html", my_context)
+
 
 # def booking_create_view(request):
 #     my_form = RawBookingForm()
@@ -28,24 +65,25 @@ from .models import Doctor
 #   context = {}
 #   return render(request, "booking/booking_create.html", context)
 
+# PROCEDURE
 
-
-def booking_create_view(request):
-    form = BookingForm(request.POST or None)
-    if form.is_valid():
-       form.save()
-       form = BookingForm()
-
-    context = {
-    'form': form
+def procedure_detail_view(request, *args, **kwargs):
+    my_context = {
+     "my_text": "Procedure View Coming Soon",
     }
-    return render(request, "booking/booking_create.html", context)
+    return render(request, "procedure/procedure_detail.html", my_context)
+
+def procedure_list_view(request, *args, **kwargs):
+    my_context = {
+      "my_text": "This is the procedure list page",
+      "my_number": "123",
+    }
+    return render(request, "procedure/procedure_list.html", my_context)
+
+def country_view(request, *args, **kwargs):
+    my_context = {
+      "my_text": "This is the country page"
+    }
+    return render(request, "country.html", my_context)
 
 
-def doctor_detail_view(request):
-  obj = Doctor.objects.get(id=1)
-
-  context = {
-  'object': obj
-  }
-  return render(request, "doctor/doctor_detail.html", context)
