@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 
 from pages.views import home_view
-from app.views import doctor_detail_view, doctor_list_view, booking_create_view, booking_delete_view, procedure_detail_view, procedure_list_view
+from app.views import doctor_detail_view, doctor_list_view, booking_create_view, booking_delete_view, procedure_detail_view, procedure_list_view, procedure_detail_view, country_list_view, country_detail_view
 
 urlpatterns = [
     path('home/', home_view, name='home'),
@@ -26,7 +26,10 @@ urlpatterns = [
     path('booking/', booking_create_view, name='booking'),
     path('bookingdelete/', booking_delete_view, name='booking delete'),
     path('procedure/', procedure_detail_view, name='procedure'),
-    path('procedurelist/', procedure_list_view, name='procedure'),
+    path('procedurelist/', procedure_list_view, name='procedure list'),
+    path('country/', country_detail_view, name='country'),
+    path('countrylist/', country_list_view, name='country list'),
+
 
 
     path('admin/', admin.site.urls),

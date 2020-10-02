@@ -3,12 +3,11 @@ from django.shortcuts import render
 from .forms import BookingForm, RawBookingForm
 
 from .models import Doctor
-# Create your views here.
 
 # DOCTOR
 
 def doctor_detail_view(request):
-  obj = Doctor.objects.get(id=1)
+  obj = Doctor.objects.get(id=2)
 
   context = {
   'object': obj
@@ -55,8 +54,7 @@ def booking_delete_view(request, *args, **kwargs):
 
 #       context = {"form" :my_form}
 
-
-   # return render(request, "booking/booking_create.html", context)
+# return render(request, "booking/booking_create.html", context)
 
 # def booking_create_view(request):
 
@@ -80,10 +78,18 @@ def procedure_list_view(request, *args, **kwargs):
     }
     return render(request, "procedure/procedure_list.html", my_context)
 
-def country_view(request, *args, **kwargs):
+# COUNTRY
+
+def country_detail_view(request, *args, **kwargs):
     my_context = {
       "my_text": "This is the country page"
     }
-    return render(request, "country.html", my_context)
+    return render(request, "country/country_detail.html", my_context)
+
+def country_list_view(request, *args, **kwargs):
+    my_context = {
+      "my_text": "This is the country list page"
+    }
+    return render(request, "country/country_list.html", my_context)
 
 

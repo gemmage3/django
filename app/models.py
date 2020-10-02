@@ -36,6 +36,8 @@ class Doctor(models.Model):
   rating = models.PositiveIntegerField(validators=[MinValueValidator(0), MaxValueValidator(10)], default=0
     )
   price_quote_available = models.BooleanField(default=False)
+  procedures = models.ManyToManyField('Procedure')
+
 
 
 class Country(models.Model):
