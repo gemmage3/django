@@ -40,7 +40,7 @@ INSTALLED_APPS = [
 
     #third party
     'schedule',
-    'django_seed'
+    #'django_seed'
 
     #own
     'pages',
