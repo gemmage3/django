@@ -1,0 +1,76 @@
+[
+  {
+    "model": "app.doctor",
+    "fields": {
+      "name": "Doctor A",
+      "summary": "Best liposuction Doctor in Belgium",
+      "location": "Brussels",
+      "country": 9,
+      "virtual_consultation": true,
+      "languages": [0,1,2],
+      "years_experience" : 10,
+      "rating": 5,
+      "price_quote_available": true,
+      "procedures": "BBL"
+    }
+  },
+
+  {
+   "model": "app.doctor",
+    "fields": {
+      "name": "Doctor B",
+      "summary": "Rhinoplasty specialist Mexico",
+      "location": "Mexico City",
+      "country": 7,
+      "virtual_consultation": true,
+      "languages": [0,1],
+      "years_experience" : 5,
+      "rating": 4,
+      "price_quote_available": true,
+      "procedures": "RHP"
+    }
+  },
+
+  {
+   "model": "app.doctor",
+    "fields": {
+      "name": "Doctor B",
+      "summary": "Rhinoplasty specialist Mexico",
+      "location": "Mexico City",
+      "country": 7,
+      "virtual_consultation": true,
+      "languages": [0,1],
+      "years_experience" : 5,
+      "rating": 4,
+      "price_quote_available": true,
+      "procedures": "RHP"
+    }
+  },
+
+   {
+   "model": "app.doctor",
+    "fields": {
+      "name": "Doctor C",
+      "summary": "Breast Aug Specialist",
+      "location": "Santo Domingo",
+      "country": 6,
+      "virtual_consultation": true,
+      "languages": [0,1],
+      "years_experience" : 20,
+      "rating": 5,
+      "price_quote_available": false,
+      "procedures": "BA"
+    }
+  },
+
+  {
+    "model": "app.user",
+      "fields": {
+        "user_id" : 1
+        "email" : "joeblogs@gmail.com",
+        "name" : "joe blogs",
+        "password" : "123abb"
+      }
+  }
+
+]
