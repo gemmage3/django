@@ -1,8 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>In App Template: {{object.name}}</h1>
-  <p>
-    {{ my_text}}
-  </p>
+    <br>
+
+        <div class="row">
+      <div class="col-md">
+        <div class="card card-body">
+          <h5>Products</h5>
+        </div>
+        <div class="card card-body">
+          <table class="table">
+            <tr>
+              <th>Doctor: {{object.name}}</th>
+              <th>Location</th>
+              <th>Price</th>
+            </tr>
+
+          </table>
+        </div>
+      </div>
+
+    </div>
+
 {% endblock content %}
