@@ -88,15 +88,14 @@ class Booking(models.Model):
 
 class Procedure(models.Model):
     PROCEDURE_CHOICES = (
-      ('BBL', 'BBL'),
-      ('BA', 'BREAST AUGMENTATION'),
-      ('RHP', 'RHINOPLASTY'),
+      (1, 'BBL'),
+      (2, 'BREAST AUGMENTATION'),
+      (3, 'RHINOPLASTY'),
       )
 
     procedure_id = models.AutoField(primary_key=True)
     procedure_name = models.CharField(max_length=30, choices=PROCEDURE_CHOICES, blank=False)
-    Procedure_description = models.TextField(default = "Description", blank=False)
-    doctors = models.ManyToManyField(Doctor)
+    procedure_description = models.TextField(default = "Description", blank=False)
 
 
 

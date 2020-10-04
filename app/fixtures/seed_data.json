@@ -1,76 +1,122 @@
 [
+   {
+    "model": "app.doctor",
+    "pk": 5,
+    "fields": {
+    "name": "Doctor A",
+    "summary": "Best liposuction Doctor in Belgium",
+    "location": "Brussels",
+    "country": "BELGIUM",
+    "virtual_consultation": true,
+    "languages": 2,
+    "years_experience" : 10,
+    "rating": 5,
+    "price_quote_available": true
+     }
+   },
+
   {
     "model": "app.doctor",
-    "fields": {
-      "name": "Doctor A",
-      "summary": "Best liposuction Doctor in Belgium",
-      "location": "Brussels",
-      "country": 9,
-      "virtual_consultation": true,
-      "languages": [0,1,2],
-      "years_experience" : 10,
-      "rating": 5,
-      "price_quote_available": true,
-      "procedures": "BBL"
-    }
-  },
-
-  {
-   "model": "app.doctor",
+    "pk": 6,
     "fields": {
       "name": "Doctor B",
       "summary": "Rhinoplasty specialist Mexico",
       "location": "Mexico City",
       "country": 7,
       "virtual_consultation": true,
-      "languages": [0,1],
+      "languages": 0,
       "years_experience" : 5,
       "rating": 4,
-      "price_quote_available": true,
-      "procedures": "RHP"
+      "price_quote_available": true
     }
   },
 
   {
    "model": "app.doctor",
-    "fields": {
+   "pk": 7,
+   "fields": {
       "name": "Doctor B",
       "summary": "Rhinoplasty specialist Mexico",
       "location": "Mexico City",
       "country": 7,
       "virtual_consultation": true,
-      "languages": [0,1],
+      "languages": 1,
       "years_experience" : 5,
       "rating": 4,
-      "price_quote_available": true,
-      "procedures": "RHP"
+      "price_quote_available": true
     }
   },
 
    {
-   "model": "app.doctor",
+    "model": "app.doctor",
+    "pk": 8,
     "fields": {
       "name": "Doctor C",
       "summary": "Breast Aug Specialist",
       "location": "Santo Domingo",
       "country": 6,
       "virtual_consultation": true,
-      "languages": [0,1],
+      "languages": 1,
       "years_experience" : 20,
       "rating": 5,
-      "price_quote_available": false,
-      "procedures": "BA"
+      "price_quote_available": false
     }
   },
 
-  {
+    {
+     "model": "app.user",
+     "pk" : 1,
+     "fields": {
+     "email" : "joeblogs@gmail.com",
+     "name" : "joe blogs",
+     "password" : "123abb"
+      }
+    },
+
+   {
+     "model": "app.user",
+     "pk" : 2,
+     "fields": {
+     "email" : "johnbrown@gmail.com",
+     "name" : "john brown",
+     "password" : "123456"
+      }
+  },
+
+   {
     "model": "app.user",
-      "fields": {
-        "user_id" : 1
-        "email" : "joeblogs@gmail.com",
-        "name" : "joe blogs",
-        "password" : "123abb"
+    "pk" : 3,
+    "fields": {
+    "email" : "mrssmith@gmail.com",
+    "name" : "diane smith",
+    "password" : "abcdef"
+      }
+  },
+
+   {
+    "model": "app.procedure",
+    "pk" : 1,
+    "fields": {
+    "procedure_name" : "BBL",
+    "procedure_description" : "LOREN IPSUM, LOREM IPSUM, LOREM IPSUM"
+      }
+  },
+
+    {
+    "model": "app.procedure",
+    "pk" : 2,
+    "fields": {
+    "procedure_name" : "BREAST AUGMENTATION",
+    "procedure_description" : "LOREN IPSUM, LOREM IPSUM, LOREM IPSUM"
+      }
+  },
+
+    {
+    "model": "app.procedure",
+    "pk" : 3,
+    "fields": {
+    "procedure_name" : "RHINOPLASTY",
+    "procedure_description" : "LOREN IPSUM, LOREM IPSUM, LOREM IPSUM"
       }
   }
-
 ]
