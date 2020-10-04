@@ -7,7 +7,7 @@ from .models import Doctor
 # DOCTOR
 
 def doctor_detail_view(request):
-  obj = Doctor.objects.get(id=2)
+  obj = Doctor.objects.get(id=1)
 
   context = {
   'object': obj
