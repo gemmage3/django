@@ -1,10 +1,20 @@
 from django.shortcuts import render
 
-from .forms import BookingForm, RawBookingForm
+from .forms import BookingForm, RawBookingForm, DoctorCreateForm
 
 from .models import Doctor
 
 # DOCTOR
+
+def doctor_create_view(request):
+  form = DoctorCreateForm(request.POST or None)
+  if form.is_valid():
+    form.save()
+
+  context = {
+      'form': form
+  }
+  return render(request, "doctor/doctor_create.html")
 
 def doctor_detail_view(request):
   obj = Doctor.objects.get(id=1)

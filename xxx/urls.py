@@ -15,14 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 
 from pages.views import home_view
-from app.views import doctor_detail_view, doctor_list_view, booking_create_view, booking_delete_view, procedure_detail_view, procedure_list_view, procedure_detail_view, country_list_view, country_detail_view
+from app.views import doctor_detail_view, doctor_list_view, doctor_create_view, booking_create_view, booking_delete_view, procedure_detail_view, procedure_list_view, procedure_detail_view, country_list_view, country_detail_view
 
 urlpatterns = [
     path('home/', home_view, name='home'),
     path('doctor/', doctor_detail_view, name='doctor'),
     path('doctorlist/', doctor_list_view, name='doctor list'),
+    path('doctorcreate/', doctor_create_view, name='doctor create'),
     path('booking/', booking_create_view, name='booking'),
     path('bookingdelete/', booking_delete_view, name='booking delete'),
     path('procedure/', procedure_detail_view, name='procedure'),
@@ -34,3 +37,6 @@ urlpatterns = [
 
     path('admin/', admin.site.urls),
 ]
+
+if settings.DEBUG:
+  urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
