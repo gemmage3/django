@@ -24,7 +24,7 @@ from app.views import doctor_detail_view, doctor_list_view, doctor_create_view, 
 urlpatterns = [
     path('', home_view, name='home'),
     path('doctor/', doctor_detail_view, name='doctor'),
-    path('doctorlist/', doctor_list_view, name='doctor list'),
+    path('doctorlist/', doctor_list_view, name='doctor_list'),
     path('doctorcreate/', doctor_create_view, name='doctor create'),
     path('booking/', booking_create_view, name='booking'),
     path('bookingdelete/', booking_delete_view, name='booking delete'),
