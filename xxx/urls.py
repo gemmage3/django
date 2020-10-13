@@ -22,7 +22,7 @@ from pages.views import home_view
 from app.views import doctor_detail_view, doctor_list_view, doctor_create_view, booking_create_view, booking_delete_view, procedure_detail_view, procedure_list_view, procedure_detail_view, country_list_view, country_detail_view
 
 urlpatterns = [
-    path('home/', home_view, name='home'),
+    path('', home_view, name='home'),
     path('doctor/', doctor_detail_view, name='doctor'),
     path('doctorlist/', doctor_list_view, name='doctor list'),
     path('doctorcreate/', doctor_create_view, name='doctor create'),
