@@ -19,7 +19,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from pages.views import home_view
-from app.views import doctor_detail_view, doctor_list_view, doctor_create_view, booking_create_view, booking_delete_view, procedure_detail_view, procedure_list_view, procedure_detail_view, country_list_view, country_detail_view
+from app.views import doctor_detail_view, doctor_list_view, doctor_create_view, booking_create_view, booking_delete_view, procedure_list_view, procedure_detail_view, country_list_view, country_detail_view
 
 urlpatterns = [
     path('', home_view, name='home'),
@@ -28,8 +28,8 @@ urlpatterns = [
     path('doctorcreate/', doctor_create_view, name='doctor create'),
     path('booking/', booking_create_view, name='booking'),
     path('bookingdelete/', booking_delete_view, name='booking delete'),
-    path('procedure/', procedure_detail_view, name='procedure'),
-    path('procedurelist/<int:id>', procedure_list_view, name='procedure list'),
+    path('procedure/<int:id>', procedure_detail_view, name='procedure'),
+    path('procedurelist/', procedure_list_view, name='procedure list'),
     path('country/', country_detail_view, name='country'),
     path('countrylist/', country_list_view, name='country list'),
 

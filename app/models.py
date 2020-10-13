@@ -65,7 +65,7 @@ class Country(models.Model):
     )
 
 class Procedure(models.Model):
-    procedure_id = models.AutoField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     procedure_name = models.CharField(max_length=30, blank=False)
     procedure_description = models.TextField(default = "Description", blank=False)
 

@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 from .forms import BookingForm, RawBookingForm, DoctorCreateForm
 
-from .models import Doctor
+from .models import Doctor, Procedure
 
 # DOCTOR
 
@@ -75,7 +75,7 @@ def booking_delete_view(request, *args, **kwargs):
 
 # PROCEDURE
 
-def procedure_detail_view(request, *args, **kwargs):
+def procedure_detail_view(request, id):
     obj = Procedure.objects.get(id=1)
 
     context = {
