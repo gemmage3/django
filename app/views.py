@@ -16,7 +16,7 @@ def doctor_create_view(request):
   }
   return render(request, "doctor/doctor_create.html")
 
-def doctor_detail_view(request):
+def doctor_detail_view(request, id):
   obj = Doctor.objects.get(id=1)
 
   context = {
@@ -76,10 +76,13 @@ def booking_delete_view(request, *args, **kwargs):
 # PROCEDURE
 
 def procedure_detail_view(request, *args, **kwargs):
-    my_context = {
-     "my_text": "Procedure View Coming Soon",
+    obj = Procedure.objects.get(id=1)
+
+    context = {
+    'object': obj
     }
-    return render(request, "procedure/procedure_detail.html", my_context)
+
+    return render(request, "procedure/procedure_detail.html", context)
 
 def procedure_list_view(request, *args, **kwargs):
     my_context = {
@@ -91,10 +94,14 @@ def procedure_list_view(request, *args, **kwargs):
 # COUNTRY
 
 def country_detail_view(request, *args, **kwargs):
-    my_context = {
-      "my_text": "This is the country page"
+
+    obj = Country.objects.get(id=1)
+
+    context = {
+    'object': obj
     }
-    return render(request, "country/country_detail.html", my_context)
+
+    return render(request, "country/country_detail.html", context)
 
 def country_list_view(request, *args, **kwargs):
     my_context = {
