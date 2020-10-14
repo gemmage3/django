@@ -16,8 +16,8 @@ def doctor_create_view(request):
   }
   return render(request, "doctor/doctor_create.html")
 
-def doctor_detail_view(request, id):
-  obj = Doctor.objects.get(id=1)
+def doctor_detail_view(request, pk):
+  obj = Doctor.objects.get(pk=1)
 
   context = {
   'object': obj
@@ -75,8 +75,8 @@ def booking_delete_view(request, *args, **kwargs):
 
 # PROCEDURE
 
-def procedure_detail_view(request, id):
-    obj = Procedure.objects.get(id=1)
+def procedure_detail_view(request, pk):
+    obj = Procedure.objects.get(pk=1)
 
     context = {
     'object': obj
