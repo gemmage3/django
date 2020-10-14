@@ -93,9 +93,9 @@ def procedure_list_view(request, *args, **kwargs):
 
 # COUNTRY
 
-def country_detail_view(request, *args, **kwargs):
+def country_detail_view(request, pk, *args, **kwargs):
 
-    obj = Country.objects.get(id=1)
+    obj = Country.objects.get(pk=1)
 
     context = {
     'object': obj
