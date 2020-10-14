@@ -1,6 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Doctor List - Coming Soon</h1>
 
-{% endblock content %}
+<!-- {% for object in object_list %} -->
+
+<h1>{{objects.all}}</h1>
+
+
+
+  <div>
+      {{object.name}}
+      {% include 'doctor/doctor_list.html' with doctor=object %}
+  </div>
+{% endfor %}
+
+{% endblock %}

@@ -25,11 +25,11 @@ def doctor_detail_view(request, pk):
   return render(request, "doctor/doctor_detail.html", context)
 
 def doctor_list_view(request, *args, **kwargs):
-    my_context = {
-      "my_text": "This is the doctor list page",
-      "my_number": "123",
+    qs = Doctor.objects.all()
+    context = { "object_list": qs
+
     }
-    return render(request, "doctor/doctor_list.html", my_context)
+    return render(request, "doctor/doctor_list.html", context)
 
 # BOOKING
 

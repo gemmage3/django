@@ -1,25 +1,27 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <br>
 
-        <div class="row">
-      <div class="col-md">
-        <div class="card card-body">
-          <h5>DOCTORS</h5>
-        </div>
-        <div class="card card-body">
-          <table class="table">
-            <tr>
-              <th>{{object.name}}</th>
-              <th>{{object.location}}</th>
-              <th>RATING: {{object.rating}}</th>
-            </tr>
 
-          </table>
-        </div>
-      </div>
+    <div class="card-product">
+       <img src="{{object.main_img}}" />
+        <div class="card-product-infos">
+              <h2>{{object.name}}</h2>
 
-    </div>
+              <h3>ABOUT {{object.summary}}</h3>
+              <h4>CITY {{object.location}}</h4>
+              <h5>COUNTRY {{object.country.object}}</h5>
+              <h6>VIRTUAL CONSULTATION {{object.virtual_consultation}}</h6>
+              <h5>LANGUAGES SPOKEN {{object.languages}}</h5>
+              <h5>RATING {{object.rating}}</h5>
+
+  </div>
+</div>
+
+
+<div>
+
+
+</div>
 
 {% endblock content %}
