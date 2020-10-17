@@ -30,9 +30,7 @@ def doctor_detail_view(request, pk):
 
 def doctor_list_view(request, *args, **kwargs):
     qs = Doctor.objects.all()
-    context = { "object_list": qs
-
-    }
+    context = { "object_list": qs}
     return render(request, "doctor/doctor_list.html", context)
 
 # BOOKING

@@ -2,16 +2,12 @@
 
 {% block content %}
 
-{% for object in qs %}
+{% for object in object_list %}
+    <div>
+        {{ object }}
 
-<h1>{{objects.all}}</h1>
+    </div>
 
-
-
-  <div>
-      {{object.name}}
-      {% include 'doctor/doctor_list.html' with doctor=object %}
-  </div>
 {% endfor %}
 
 {% endblock %}
