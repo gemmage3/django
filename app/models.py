@@ -7,6 +7,11 @@ from datetime import datetime
 
 # Create your models here.
 
+class Language(models.Model):
+
+    pass
+
+
 class Doctor(models.Model):
 
   name = models.CharField(max_length=30)
@@ -15,7 +20,7 @@ class Doctor(models.Model):
   location = models.CharField(max_length=50)
   country = models.ForeignKey('Country', on_delete=models.CASCADE, blank=True, null=True)
   virtual_consultation = models.BooleanField(default=False)
-  languages = models.CharField(max_length=50, default=0)
+  languages = models.ManyToManyField('language')
   years_experience = models.PositiveIntegerField(default=0)
   rating = models.PositiveIntegerField(validators=[MinValueValidator(0), MaxValueValidator(10)], default=0
     )
@@ -68,7 +73,3 @@ class Procedure(models.Model):
     id = models.AutoField(primary_key=True)
     procedure_name = models.CharField(max_length=30, blank=False)
     procedure_description = models.TextField(default = "Description", blank=False)
-
-
-
-
