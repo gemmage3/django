@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import Http404
 
 from .forms import BookingForm, RawBookingForm, DoctorCreateForm
 
@@ -17,7 +18,10 @@ def doctor_create_view(request):
   return render(request, "doctor/doctor_create.html")
 
 def doctor_detail_view(request, pk):
-  obj = Doctor.objects.get(pk=1)
+  try:
+      obj = Doctor.objects.get(pk=pk)
+  except Doctor.DoesNotExist:
+      raise Http404
 
   context = {
   'object': obj
