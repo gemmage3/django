@@ -17,6 +17,7 @@ class DoctorCreateForm(forms.ModelForm):
                             )
                         )
 
+
   class Meta:
     model = Doctor
     fields = ['name',
@@ -25,7 +26,7 @@ class DoctorCreateForm(forms.ModelForm):
         'location',
         'country',
         'virtual_consultation',
-        'languages',
+        #'languages',
         'years_experience',
         'price_quote_available',
         'procedures']
