@@ -8,14 +8,12 @@ from .models import Doctor, Procedure
 # DOCTOR
 
 def doctor_create_view(request):
-  form = DoctorCreateForm(request.POST or None)
-  if form.is_valid():
-    form.save()
+      form = DoctorCreateForm(request.POST or None)
+      if form.is_valid():
+          form.save()
 
-  context = {
-      'form': form
-  }
-  return render(request, "doctor/doctor_create.html")
+
+  return render(request, "forms.html", "form":form)
 
 def doctor_detail_view(request, pk):
   try:
