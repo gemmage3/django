@@ -7,13 +7,13 @@ from .models import Doctor, Procedure
 
 # DOCTOR
 
-def doctor_create_view(request):
-      form = DoctorCreateForm(request.POST or None)
+def doctor_create_view(request, *args, **kwargs):
+      form = DoctorCreateForm(request.POST or None, request.FILES or None)
       if form.is_valid():
           form.save()
+      form = DoctorCreateForm()
 
-
-  return render(request, "forms.html", "form":form)
+      return render(request, "forms.html", {"form":form})
 
 def doctor_detail_view(request, pk):
   try:
